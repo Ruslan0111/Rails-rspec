@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Api
   module V1
     class BooksController < ApplicationController
@@ -32,6 +34,7 @@ module Api
       end
 
       private
+
       def book_params
         params.permit(:title, :author, :category_id)
       end

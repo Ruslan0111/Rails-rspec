@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Api
   module V1
     class CategoriesController < ApplicationController
@@ -10,7 +12,7 @@ module Api
 
       def create
         @category = Category.create(category_params)
-        
+
         if @category.save
           render json: CategoryRepresenter.new(@category).as_json, status: :created
         else
@@ -24,6 +26,7 @@ module Api
       end
 
       private
+
       def category_params
         params.permit(:name)
       end

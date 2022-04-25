@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CategoryRepresenter
   def initialize(category)
     @category = category
@@ -11,5 +13,6 @@ class CategoryRepresenter
   end
 
   private
+
   attr_reader :category
 end

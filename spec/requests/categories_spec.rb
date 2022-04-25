@@ -1,6 +1,8 @@
-require 'rails_helper'
+# frozen_string_literal: true
 
-RSpec.describe "Categories", type: :request do
+require 'rails_helper'
+# rubocop:disable Metrics/BlockLength
+RSpec.describe 'Categories', type: :request do
   let!(:categories) { create_list(:category, 5) }
   let!(:category_id) { categories.first.id }
 
@@ -36,7 +38,7 @@ RSpec.describe "Categories", type: :request do
       end
       it 'returns a validation failure message' do
         expect(response.body)
-       .to include("is too short (minimum is 3 characters)")
+          .to include('is too short (minimum is 3 characters)')
       end
     end
   end
@@ -48,3 +50,4 @@ RSpec.describe "Categories", type: :request do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength

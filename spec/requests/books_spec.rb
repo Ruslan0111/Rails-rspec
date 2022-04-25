@@ -1,6 +1,8 @@
-require 'rails_helper'
+# frozen_string_literal: true
 
-RSpec.describe "Books", type: :request do
+require 'rails_helper'
+# rubocop:disable Metrics/BlockLength
+RSpec.describe 'Books', type: :request do
   let!(:books) { create_list(:book, 10) }
   let(:book_id) { books.first.id }
 
@@ -38,7 +40,7 @@ RSpec.describe "Books", type: :request do
         expect(response.body).to include("Couldn't find Book with 'id'=0")
       end
     end
-  end 
+  end
 
   describe 'POST /books/:id' do
     let!(:history) { create(:category) }
@@ -93,3 +95,4 @@ RSpec.describe "Books", type: :request do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength
